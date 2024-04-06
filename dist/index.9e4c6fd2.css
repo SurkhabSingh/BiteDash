@@ -45,10 +45,20 @@
 
 .res-logo {
   width: 100%;
+  height: 150px;
 }
 
 .filter-btn {
   margin: 10px;
+}
+
+.login-btn {
+  cursor: pointer;
+  padding: 20px;
+}
+
+.filter {
+  display: flex;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
