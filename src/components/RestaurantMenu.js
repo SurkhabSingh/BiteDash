@@ -1,37 +1,39 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { MENU_API_URL } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resMenu, setResMenu] = useState([]);
+  const { resID } = useParams();
+  const resMenu = useRestaurantMenu(resID);
+  console.log(resMenu);
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  if (resMenu.length === 0) return <div>Loading...</div>;
 
-  const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    // console.log(
-    //   json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-    // );
+  const { name, cuisines, costForTwo } =
+    resMenu.data.cards[2]?.card?.card?.info;
 
-    setResMenu(
-      json.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
-  // console.log(resMenu[0]?.info);
-
-  // const { name, cuisines, costForTwo } = resMenu[0]?.info;
-
-  return resMenu === null ? (
-    <div>loading....</div>
-  ) : (
+  return (
     <div className="menu">
-      <h1>{resMenu[0].info.name}</h1>
-      <h3>
-        {resMenu[0]?.info?.cuisines.join(", ")} - {resMenu[0]?.info?.costForTwo}
-      </h3>
+      <h1>{name}</h1>
+      <p>
+        {cuisines.join(", ")} - Rs {costForTwo / 100} for two
+      </p>
+
+      <h2>Menu</h2>
+
+      {resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map(
+        (outer, index) => (
+          <ul key={index}>
+            <h2>{outer.card.card.title}</h2>
+            {outer.card?.card?.itemCards?.map((item) => (
+              <li key={item.card.info.id}>
+                {item.card.info.name} - Rs. {item.card.info.price / 100}
+              </li>
+            ))}
+          </ul>
+        )
+      )}
     </div>
   );
 };
