@@ -3026,7 +3026,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 }, undefined)
             },
             {
-                path: "restaurants/:red-id",
+                path: "restaurants/:resID",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantMenuDefault.default), {}, void 0, false, {
                     fileName: "src/app.js",
                     lineNumber: 40,
@@ -3052,7 +3052,7 @@ $RefreshReg$(_c, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","./components/About":"9R1Eu","./components/Contact":"cgAOG","./components/Error":"kvula","./components/RestaurantMenu":"8PuJ6"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","react-router-dom":"9xmpe","./components/About":"9R1Eu","./components/Contact":"cgAOG","./components/Error":"kvula","./components/RestaurantMenu":"8PuJ6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27252,10 +27252,12 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _constants = require("../utils/constants");
 var _reactRouterDom = require("react-router-dom");
+var _useOnline = require("../utils/useOnline");
 var _s = $RefreshSig$();
 const Header = ()=>{
     _s();
     const [login, setLogin] = (0, _react.useState)("Login");
+    const status = (0, _useOnline.useOnline)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header",
         children: [
@@ -27266,12 +27268,12 @@ const Header = ()=>{
                     src: (0, _constants.LOGO_URL)
                 }, void 0, false, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 11,
+                    lineNumber: 13,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 10,
+                lineNumber: 12,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27279,23 +27281,19 @@ const Header = ()=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/",
-                                children: "Home"
-                            }, void 0, false, {
-                                fileName: "src/components/Header.js",
-                                lineNumber: 16,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
+                            children: [
+                                "Status:",
+                                status ? "\uD83D\uDE02" : "\uD83D\uDE2D"
+                            ]
+                        }, void 0, true, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 15,
+                            lineNumber: 17,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/about",
-                                children: "About Us"
+                                to: "/",
+                                children: "Home"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
                                 lineNumber: 19,
@@ -27308,8 +27306,8 @@ const Header = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/contact",
-                                children: "Contact Us"
+                                to: "/about",
+                                children: "About Us"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
                                 lineNumber: 22,
@@ -27322,8 +27320,8 @@ const Header = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/",
-                                children: "Cart"
+                                to: "/contact",
+                                children: "Contact Us"
                             }, void 0, false, {
                                 fileName: "src/components/Header.js",
                                 lineNumber: 25,
@@ -27334,6 +27332,20 @@ const Header = ()=>{
                             lineNumber: 24,
                             columnNumber: 11
                         }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/",
+                                children: "Cart"
+                            }, void 0, false, {
+                                fileName: "src/components/Header.js",
+                                lineNumber: 28,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 27,
+                            columnNumber: 11
+                        }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                             className: "login-btn",
                             onClick: ()=>{
@@ -27342,28 +27354,32 @@ const Header = ()=>{
                             children: login
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 27,
+                            lineNumber: 30,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 14,
+                    lineNumber: 16,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 13,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Header.js",
-        lineNumber: 9,
+        lineNumber: 11,
         columnNumber: 5
     }, undefined);
 };
-_s(Header, "V7p7awUVk0a9+Xzz/VMZo9UoxXk=");
+_s(Header, "NQL9pT4nv8mjJIbMdUuCq2YNesY=", false, function() {
+    return [
+        (0, _useOnline.useOnline)
+    ];
+});
 _c = Header;
 exports.default = Header;
 var _c;
@@ -27374,13 +27390,17 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","react-router-dom":"9xmpe"}],"hB8jg":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../utils/constants":"hB8jg","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/useOnline":"74Yls"}],"hB8jg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "CDN_URL", ()=>CDN_URL);
 parcelHelpers.export(exports, "LOGO_URL", ()=>LOGO_URL);
+parcelHelpers.export(exports, "MENU_API_URL", ()=>MENU_API_URL);
+parcelHelpers.export(exports, "RES_URL", ()=>RES_URL);
 const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 const LOGO_URL = "https://imgproxy.epicpxls.com/MRcEG4yKDlqHQPSFyJvrqdOQ7yO3qj0Uscw2gZm81_g/rs:fill:800:600:0/g:no/aHR0cHM6Ly9pdGVt/cy5lcGljcHhscy5j/b20vdXBsb2Fkcy9w/aG90by9iMzRhYWQx/OTViMDdjZjM2YTIy/Yzc2ZTYwNjRmNTE5/NQ.jpg";
+const MENU_API_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER&restaurantId=";
+const RES_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -27412,145 +27432,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("7422ead32dcc1e6b");
-function debounce(func, delay) {
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30);
-// Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports;
-                // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
-                // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-}
-// When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        var typeID = id + " %exports% " + key;
-        Refresh.register(exportValue, typeID);
-    }
-}
-
-},{"7422ead32dcc1e6b":"786KC"}],"9xmpe":[function(require,module,exports) {
+},{}],"9xmpe":[function(require,module,exports) {
 /**
  * React Router DOM v6.22.3
  *
@@ -34082,7 +33964,174 @@ function persistAppliedTransitions(_window, transitions) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8yaV8":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("7422ead32dcc1e6b");
+function debounce(func, delay) {
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30);
+// Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports;
+                // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
+                // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+}
+// When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        var typeID = id + " %exports% " + key;
+        Refresh.register(exportValue, typeID);
+    }
+}
+
+},{"7422ead32dcc1e6b":"786KC"}],"74Yls":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$03b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$03b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useOnline", ()=>useOnline);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useOnline = ()=>{
+    _s();
+    const [status, setStatus] = (0, _react.useState)(true);
+    (0, _react.useEffect)(()=>{
+        addEventListener("offline", (event)=>{
+            setStatus(false);
+        });
+    }, []);
+    return status;
+};
+_s(useOnline, "YEm6bcmWAfKQ/sO7AUsCEPnNcf0=");
+
+  $parcel$ReactRefreshHelpers$03b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8yaV8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0606 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34094,26 +34143,50 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
-var _mockData = require("../utils/mockData");
-var _mockDataDefault = parcelHelpers.interopDefault(_mockData);
 var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _useRestaurantCard = require("../utils/useRestaurantCard");
+var _useOnline = require("../utils/useOnline");
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
-    const [listOfRestaurants, setListOfRestaurants] = (0, _react.useState)([]);
     const [searchText, setSearchText] = (0, _react.useState)("");
     const [filteredList, setFilteredList] = (0, _react.useState)([]);
+    const listOfRestaurants = (0, _useRestaurantCard.useRestaurantCard)();
+    const status = (0, _useOnline.useOnline)();
     (0, _react.useEffect)(()=>{
-        fetchData();
-    }, []);
-    const fetchData = async ()=>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-        const json = await data.json();
-        console.log(json);
-        console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-        setListOfRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-        setFilteredList(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+        setFilteredList(listOfRestaurants);
+    }, [
+        listOfRestaurants
+    ]);
+    (0, _react.useEffect)(()=>{
+        if (searchText === "") setFilteredList(listOfRestaurants);
+        else {
+            const filteredRes = listOfRestaurants.filter((res1)=>res1.info.name.toLowerCase().includes(searchText.toLowerCase()));
+            setFilteredList(filteredRes);
+        }
+    }, [
+        searchText,
+        listOfRestaurants
+    ]);
+    const handleSearch = ()=>{
+        if (searchText == "") setFilteredList(listOfRestaurants);
+        else {
+            const filteredRes = listOfRestaurants.filter((res1)=>res1.info.name.toLowerCase().includes(searchText.toLowerCase()));
+            setFilteredList(filteredRes);
+        }
     };
+    const handleFilter = ()=>{
+        const filteredList1 = filteredList.filter((res)=>res.info.avgRating > 4);
+        setFilteredList(filteredList1);
+    };
+    if (status === false) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "Looks like you are offline. Check your internet connection."
+    }, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 45,
+        columnNumber: 12
+    }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
@@ -34127,71 +34200,76 @@ const Body = ()=>{
                                 className: "search-box",
                                 type: "text",
                                 value: searchText,
-                                onChange: (e)=>{
-                                    setSearchText(e.target.value);
-                                }
+                                onChange: (e)=>setSearchText(e.target.value)
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 35,
+                                lineNumber: 52,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: ()=>{
-                                    const filteredRes = listOfRestaurants.filter((res1)=>res1.info.name.toLowerCase().includes(searchText.toLowerCase()));
-                                    setFilteredList(filteredRes);
-                                },
+                                onClick: handleSearch,
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 43,
+                                lineNumber: 58,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 34,
+                        lineNumber: 51,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "filter-btn",
-                        onClick: ()=>{
-                            const filteredList1 = filteredList.filter((res)=>res.info.avgRating > 4);
-                            setFilteredList(filteredList1);
-                        },
+                        onClick: handleFilter,
                         children: "Top Rated Restaurants"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 54,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 33,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container",
-                children: filteredList.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
-                        restaurant: restaurant
+                children: filteredList.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        className: "res-container",
+                        to: `/restaurants/${restaurant.info.id}`,
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                            restaurant: restaurant
+                        }, void 0, false, {
+                            fileName: "src/components/Body.js",
+                            lineNumber: 71,
+                            columnNumber: 13
+                        }, undefined)
                     }, restaurant.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 68,
+                        lineNumber: 66,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 66,
+                lineNumber: 64,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 32,
+        lineNumber: 49,
         columnNumber: 5
     }, undefined);
 };
-_s(Body, "0qke0sOyymdow8nMArn26JBe2M8=");
+_s(Body, "h0KggY26FBxquyb7MXQSqGpC9Ls=", false, function() {
+    return [
+        (0, _useRestaurantCard.useRestaurantCard),
+        (0, _useOnline.useOnline)
+    ];
+});
 _c = Body;
 exports.default = Body;
 var _c;
@@ -34202,7 +34280,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./RestaurantCard":"bMboU","../utils/mockData":"iOpE9","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bMboU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./RestaurantCard":"bMboU","react":"21dqq","react-router-dom":"9xmpe","../utils/useRestaurantCard":"2OfXA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/useOnline":"74Yls"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34217,7 +34295,6 @@ const StyleCard = {
     backgroundColor: "#f0f0f0"
 };
 const RestaurantCard = ({ restaurant })=>{
-    // const {resData} = props;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "res-card",
         style: StyleCard,
@@ -34228,34 +34305,34 @@ const RestaurantCard = ({ restaurant })=>{
                 src: (0, _constants.CDN_URL) + restaurant.info.cloudinaryImageId
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 11,
+                lineNumber: 10,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: restaurant.info.name
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 19,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: restaurant.info.cuisines.join(", ")
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 20,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: restaurant.info.avgRating
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
-                lineNumber: 21,
+                lineNumber: 17,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/RestaurantCard.js",
-        lineNumber: 10,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined);
 };
@@ -34269,880 +34346,40 @@ $RefreshReg$(_c, "RestaurantCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iOpE9":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2OfXA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d7bd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d7bd.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const resList = [
-    {
-        info: {
-            id: "157768",
-            name: "The Good Bowl",
-            cloudinaryImageId: "6e04be27387483a7c00444f8e8241108",
-            locality: "Minto Road",
-            areaName: "Connaught Place",
-            costForTwo: "\u20B9400 for two",
-            cuisines: [
-                "Biryani",
-                "Pastas",
-                "Punjabi",
-                "Desserts",
-                "Beverages"
-            ],
-            avgRating: 4.3,
-            parentId: "7918",
-            avgRatingString: "4.3",
-            totalRatingsString: "1K+",
-            sla: {
-                deliveryTime: 34,
-                lastMileTravel: 0.7,
-                serviceability: "SERVICEABLE",
-                slaString: "34 mins",
-                lastMileTravelString: "0.7 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 02:45:00",
-                opened: true
-            },
-            badges: {
-                textExtendedBadges: [
-                    {
-                        iconId: "guiltfree/GF_Logo_android_3x",
-                        shortDescription: "options available",
-                        fontColor: "#7E808C"
-                    }
-                ]
-            },
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {
-                        badgeObject: [
-                            {
-                                attributes: {
-                                    description: "",
-                                    fontColor: "#7E808C",
-                                    iconId: "guiltfree/GF_Logo_android_3x",
-                                    shortDescription: "options available"
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "\u20B9125 OFF",
-                subHeader: "ABOVE \u20B9449",
-                discountTag: "FLAT DEAL"
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/the-good-bowl-minto-road-connaught-place-delhi-157768",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "35887",
-            name: "Sweet Truth - Cake and Desserts",
-            cloudinaryImageId: "81cf6bfe2760a45a0caf2e28716ca4d7",
-            locality: "Minto Road",
-            areaName: "Connaught Place",
-            costForTwo: "\u20B9450 for two",
-            cuisines: [
-                "Snacks",
-                "Bakery",
-                "Desserts",
-                "Beverages"
-            ],
-            avgRating: 4.3,
-            parentId: "4444",
-            avgRatingString: "4.3",
-            totalRatingsString: "1K+",
-            sla: {
-                deliveryTime: 22,
-                lastMileTravel: 0.7,
-                serviceability: "SERVICEABLE",
-                slaString: "22 mins",
-                lastMileTravelString: "0.7 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 02:45:00",
-                opened: true
-            },
-            badges: {},
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {}
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "\u20B9125 OFF",
-                subHeader: "ABOVE \u20B9449",
-                discountTag: "FLAT DEAL"
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/sweet-truth-cake-and-desserts-minto-road-connaught-place-delhi-35887",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "17835",
-            name: "Behrouz Biryani",
-            cloudinaryImageId: "89fccaa76f2f760e2742b9e53d32bb69",
-            locality: "Minto Road",
-            areaName: "Connaught Place",
-            costForTwo: "\u20B9500 for two",
-            cuisines: [
-                "Biryani",
-                "North Indian",
-                "Kebabs",
-                "Mughlai",
-                "Lucknowi",
-                "Hyderabadi",
-                "Desserts",
-                "Beverages"
-            ],
-            avgRating: 4.3,
-            parentId: "1803",
-            avgRatingString: "4.3",
-            totalRatingsString: "5K+",
-            sla: {
-                deliveryTime: 26,
-                lastMileTravel: 0.7,
-                serviceability: "SERVICEABLE",
-                slaString: "26 mins",
-                lastMileTravelString: "0.7 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 02:45:00",
-                opened: true
-            },
-            badges: {
-                imageBadges: [
-                    {
-                        imageId: "newg.png",
-                        description: "Gourmet"
-                    }
-                ]
-            },
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {
-                        badgeObject: [
-                            {
-                                attributes: {
-                                    description: "Gourmet",
-                                    imageId: "newg.png"
-                                }
-                            }
-                        ]
-                    },
-                    textBased: {},
-                    textExtendedBadges: {}
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "\u20B9175 OFF",
-                subHeader: "ABOVE \u20B91199",
-                discountTag: "FLAT DEAL"
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/behrouz-biryani-minto-road-connaught-place-delhi-17835",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "28720",
-            name: "Burger King",
-            cloudinaryImageId: "e33e1d3ba7d6b2bb0d45e1001b731fcf",
-            locality: "DLF South Square",
-            areaName: "Sarojini Nagar",
-            costForTwo: "\u20B9350 for two",
-            cuisines: [
-                "Burgers",
-                "American"
-            ],
-            avgRating: 4.3,
-            parentId: "166",
-            avgRatingString: "4.3",
-            totalRatingsString: "10K+",
-            sla: {
-                deliveryTime: 59,
-                lastMileTravel: 9.7,
-                serviceability: "SERVICEABLE",
-                slaString: "59 mins",
-                lastMileTravelString: "9.7 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 01:00:00",
-                opened: true
-            },
-            badges: {},
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {}
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "60% OFF",
-                subHeader: "UPTO \u20B9120"
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/burger-king-dlf-south-square-sarojini-nagar-delhi-28720",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "53747",
-            name: "Pizza Hut",
-            cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
-            locality: "Agarwal Fun City Metro Mall",
-            areaName: "Shahdara",
-            costForTwo: "\u20B9350 for two",
-            cuisines: [
-                "Pizzas"
-            ],
-            avgRating: 3.9,
-            parentId: "721",
-            avgRatingString: "3.9",
-            totalRatingsString: "5K+",
-            sla: {
-                deliveryTime: 51,
-                lastMileTravel: 9.9,
-                serviceability: "SERVICEABLE",
-                slaString: "51 mins",
-                lastMileTravelString: "9.9 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 03:00:00",
-                opened: true
-            },
-            badges: {},
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {}
-                }
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/pizza-hut-agarwal-fun-city-metro-mall-shahdara-delhi-53747",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "214710",
-            name: "La Pino'z Pizza",
-            cloudinaryImageId: "bbzvsjc394c9a803en4i",
-            locality: "Karkardooma",
-            areaName: "Karkardooma",
-            costForTwo: "\u20B9300 for two",
-            cuisines: [
-                "Pizzas",
-                "Pastas",
-                "Italian",
-                "Desserts",
-                "Beverages"
-            ],
-            avgRating: 4,
-            parentId: "4961",
-            avgRatingString: "4.0",
-            totalRatingsString: "5K+",
-            sla: {
-                deliveryTime: 50,
-                lastMileTravel: 8.3,
-                serviceability: "SERVICEABLE",
-                slaString: "50 mins",
-                lastMileTravelString: "8.3 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 05:00:00",
-                opened: true
-            },
-            badges: {},
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {}
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "20% OFF",
-                subHeader: "UPTO \u20B9100"
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/la-pinoz-pizza-karkardooma-delhi-214710",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "93981",
-            name: "Subway",
-            cloudinaryImageId: "63178e3e64d503a479f2a2048a474552",
-            locality: "Dilshad Gardens",
-            areaName: "Karkardooma",
-            costForTwo: "\u20B9250 for two",
-            cuisines: [
-                "Salads",
-                "Snacks",
-                "Desserts",
-                "Beverages"
-            ],
-            avgRating: 3.9,
-            parentId: "2",
-            avgRatingString: "3.9",
-            totalRatingsString: "5K+",
-            sla: {
-                deliveryTime: 37,
-                lastMileTravel: 8.6,
-                serviceability: "SERVICEABLE",
-                slaString: "37 mins",
-                lastMileTravelString: "8.6 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 02:00:00",
-                opened: true
-            },
-            badges: {
-                textExtendedBadges: [
-                    {
-                        iconId: "guiltfree/GF_Logo_android_3x",
-                        shortDescription: "options available",
-                        fontColor: "#7E808C"
-                    }
-                ]
-            },
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {
-                        badgeObject: [
-                            {
-                                attributes: {
-                                    description: "",
-                                    fontColor: "#7E808C",
-                                    iconId: "guiltfree/GF_Logo_android_3x",
-                                    shortDescription: "options available"
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "\u20B9175 OFF",
-                subHeader: "ABOVE \u20B9549",
-                discountTag: "FLAT DEAL"
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/subway-dilshad-gardens-karkardooma-delhi-93981",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "25823",
-            name: "Faasos - Wraps, Rolls & Shawarma",
-            cloudinaryImageId: "af33b81798b11deba338e94b7585d348",
-            locality: "Minto Road",
-            areaName: "Connaught Place",
-            costForTwo: "\u20B9200 for two",
-            cuisines: [
-                "Kebabs",
-                "Fast Food",
-                "Snacks",
-                "American",
-                "Healthy Food",
-                "Desserts",
-                "Beverages"
-            ],
-            avgRating: 4.2,
-            parentId: "21809",
-            avgRatingString: "4.2",
-            totalRatingsString: "10K+",
-            sla: {
-                deliveryTime: 38,
-                lastMileTravel: 0.7,
-                serviceability: "SERVICEABLE",
-                slaString: "38 mins",
-                lastMileTravelString: "0.7 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 02:45:00",
-                opened: true
-            },
-            badges: {
-                textExtendedBadges: [
-                    {
-                        iconId: "guiltfree/GF_Logo_android_3x",
-                        shortDescription: "options available",
-                        fontColor: "#7E808C"
-                    }
-                ]
-            },
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {
-                        badgeObject: [
-                            {
-                                attributes: {
-                                    description: "",
-                                    fontColor: "#7E808C",
-                                    iconId: "guiltfree/GF_Logo_android_3x",
-                                    shortDescription: "options available"
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "\u20B9125 OFF",
-                subHeader: "ABOVE \u20B9349",
-                discountTag: "FLAT DEAL"
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/faasos-wraps-rolls-and-shawarma-minto-road-connaught-place-delhi-25823",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "29849",
-            name: "Firangi Bake",
-            cloudinaryImageId: "vxthorrr7qezbiogztqx",
-            locality: "Minto Road",
-            areaName: "Connaught Place",
-            costForTwo: "\u20B9400 for two",
-            cuisines: [
-                "Pizzas",
-                "Pastas",
-                "Italian",
-                "Mexican",
-                "Healthy Food",
-                "Desserts",
-                "Beverages"
-            ],
-            avgRating: 4.3,
-            parentId: "3952",
-            avgRatingString: "4.3",
-            totalRatingsString: "1K+",
-            sla: {
-                deliveryTime: 37,
-                lastMileTravel: 0.7,
-                serviceability: "SERVICEABLE",
-                slaString: "37 mins",
-                lastMileTravelString: "0.7 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 02:45:00",
-                opened: true
-            },
-            badges: {
-                textExtendedBadges: [
-                    {
-                        iconId: "guiltfree/GF_Logo_android_3x",
-                        shortDescription: "options available",
-                        fontColor: "#7E808C"
-                    }
-                ]
-            },
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {
-                        badgeObject: [
-                            {
-                                attributes: {
-                                    description: "",
-                                    fontColor: "#7E808C",
-                                    iconId: "guiltfree/GF_Logo_android_3x",
-                                    shortDescription: "options available"
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "\u20B9125 OFF",
-                subHeader: "ABOVE \u20B9449",
-                discountTag: "FLAT DEAL"
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/firangi-bake-minto-road-connaught-place-delhi-29849",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "69469",
-            name: "Pasta la Vista",
-            cloudinaryImageId: "ba665f892177fdbf0a8daa5fff3ac29f",
-            locality: "D Block",
-            areaName: "Sector 7",
-            costForTwo: "\u20B9300 for two",
-            cuisines: [
-                "Continental",
-                "Italian"
-            ],
-            avgRating: 4.1,
-            veg: true,
-            parentId: "2372",
-            avgRatingString: "4.1",
-            totalRatingsString: "10K+",
-            sla: {
-                deliveryTime: 36,
-                lastMileTravel: 11.3,
-                serviceability: "SERVICEABLE",
-                slaString: "36 mins",
-                lastMileTravelString: "11.3 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 02:00:00",
-                opened: true
-            },
-            badges: {
-                imageBadges: [
-                    {
-                        imageId: "v1695133679/badges/Pure_Veg111.png",
-                        description: "pureveg"
-                    }
-                ]
-            },
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {
-                        badgeObject: [
-                            {
-                                attributes: {
-                                    description: "pureveg",
-                                    imageId: "v1695133679/badges/Pure_Veg111.png"
-                                }
-                            }
-                        ]
-                    },
-                    textBased: {},
-                    textExtendedBadges: {}
-                }
-            },
-            aggregatedDiscountInfoV3: {
-                header: "\u20B9125 OFF",
-                subHeader: "ABOVE \u20B9249",
-                discountTag: "FLAT DEAL"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/pasta-la-vista-d-block-sector-7-delhi-69469",
-            type: "WEBLINK"
-        }
-    },
-    {
-        info: {
-            id: "330934",
-            name: "Havmor Havfunn Ice Cream",
-            cloudinaryImageId: "49845b494b1e637209b7bd1c7ca184ad",
-            locality: "Anand Vihar",
-            areaName: "Karkardooma",
-            costForTwo: "\u20B9400 for two",
-            cuisines: [
-                "Ice Cream",
-                "Ice Cream Cakes",
-                "Desserts",
-                "Beverages"
-            ],
-            avgRating: 4.5,
-            veg: true,
-            parentId: "94570",
-            avgRatingString: "4.5",
-            totalRatingsString: "100+",
-            sla: {
-                deliveryTime: 34,
-                lastMileTravel: 8.7,
-                serviceability: "SERVICEABLE",
-                slaString: "34 mins",
-                lastMileTravelString: "8.7 km",
-                iconType: "ICON_TYPE_EMPTY"
-            },
-            availability: {
-                nextCloseTime: "2024-01-26 02:00:00",
-                opened: true
-            },
-            badges: {},
-            isOpen: true,
-            type: "F",
-            badgesV2: {
-                entityBadges: {
-                    imageBased: {},
-                    textBased: {},
-                    textExtendedBadges: {}
-                }
-            },
-            loyaltyDiscoverPresentationInfo: {
-                logoCtx: {
-                    text: "BENEFITS",
-                    logo: "v1634558776/swiggy_one/OneLogo_3x.png"
-                },
-                freedelMessage: "FREE DELIVERY"
-            },
-            differentiatedUi: {
-                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                differentiatedUiMediaDetails: {
-                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
-                    lottie: {},
-                    video: {}
-                }
-            },
-            reviewsSummary: {},
-            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            restaurantOfferPresentationInfo: {}
-        },
-        analytics: {},
-        cta: {
-            link: "https://www.swiggy.com/restaurants/havmor-havfunn-ice-cream-anand-vihar-karkardooma-delhi-330934",
-            type: "WEBLINK"
-        }
-    }
-];
-exports.default = resList;
+parcelHelpers.export(exports, "useRestaurantCard", ()=>useRestaurantCard);
+var _react = require("react");
+var _constants = require("./constants");
+var _s = $RefreshSig$();
+const useRestaurantCard = ()=>{
+    _s();
+    const [listOfRestaurants, setListOfRestaurants] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        const data = await fetch((0, _constants.RES_URL));
+        const json = await data.json();
+        setListOfRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    };
+    return listOfRestaurants;
+};
+_s(useRestaurantCard, "UiDdifLDylk9/nIIRtpBnM10fwg=");
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9R1Eu":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$d7bd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","./constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9R1Eu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5b98 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35292,58 +34529,92 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _constants = require("../utils/constants");
+var _useRestaurantMenu = require("../utils/useRestaurantMenu");
+var _useRestaurantMenuDefault = parcelHelpers.interopDefault(_useRestaurantMenu);
 var _s = $RefreshSig$();
 const RestaurantMenu = ()=>{
     _s();
-    const [resMenu, setResMenu] = (0, _react.useState)([]);
-    (0, _react.useEffect)(()=>{
-        fetchMenu();
-    }, []);
-    const fetchMenu = async ()=>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-        const json = await data.json();
-        // console.log(
-        //   json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
-        // );
-        setResMenu(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-    };
-    // console.log(resMenu[0]?.info);
-    // const { name, cuisines, costForTwo } = resMenu[0]?.info;
-    return resMenu === null ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "loading...."
+    const { resID } = (0, _reactRouterDom.useParams)();
+    const resMenu = (0, _useRestaurantMenuDefault.default)(resID);
+    console.log(resMenu);
+    if (resMenu.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Loading..."
     }, void 0, false, {
         fileName: "src/components/RestaurantMenu.js",
-        lineNumber: 28,
-        columnNumber: 5
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        lineNumber: 11,
+        columnNumber: 36
+    }, undefined);
+    const { name, cuisines, costForTwo } = resMenu.data.cards[2]?.card?.card?.info;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "menu",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: resMenu[0].name
+                children: name
             }, void 0, false, {
                 fileName: "src/components/RestaurantMenu.js",
-                lineNumber: 31,
+                lineNumber: 18,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: [
-                    resMenu[0].cuisines.join(", "),
-                    " - ",
-                    resMenu[0].costForTwo
+                    cuisines.join(", "),
+                    " - Rs ",
+                    costForTwo / 100,
+                    " for two"
                 ]
             }, void 0, true, {
                 fileName: "src/components/RestaurantMenu.js",
-                lineNumber: 32,
+                lineNumber: 19,
                 columnNumber: 7
-            }, undefined)
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                children: "Menu"
+            }, void 0, false, {
+                fileName: "src/components/RestaurantMenu.js",
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined),
+            resMenu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.map((outer, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            children: outer.card.card.title
+                        }, void 0, false, {
+                            fileName: "src/components/RestaurantMenu.js",
+                            lineNumber: 28,
+                            columnNumber: 13
+                        }, undefined),
+                        outer.card?.card?.itemCards?.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: [
+                                    item.card.info.name,
+                                    " - Rs. ",
+                                    item.card.info.price / 100
+                                ]
+                            }, item.card.info.id, true, {
+                                fileName: "src/components/RestaurantMenu.js",
+                                lineNumber: 30,
+                                columnNumber: 15
+                            }, undefined))
+                    ]
+                }, index, true, {
+                    fileName: "src/components/RestaurantMenu.js",
+                    lineNumber: 27,
+                    columnNumber: 11
+                }, undefined))
         ]
     }, void 0, true, {
         fileName: "src/components/RestaurantMenu.js",
-        lineNumber: 30,
+        lineNumber: 17,
         columnNumber: 5
     }, undefined);
 };
-_s(RestaurantMenu, "rPWCtgVlJSzrB00uSWDfJo9fD80=");
+_s(RestaurantMenu, "USoTemWyCuWQ7zGk80rZv7ZiX1g=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams),
+        (0, _useRestaurantMenuDefault.default)
+    ];
+});
 _c = RestaurantMenu;
 exports.default = RestaurantMenu;
 var _c;
@@ -35354,6 +34625,39 @@ $RefreshReg$(_c, "RestaurantMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}]},["3lsJq","1xC6H","bNKaB"], "bNKaB", "parcelRequire164e")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","../utils/constants":"hB8jg","../utils/useRestaurantMenu":"fMOkH"}],"fMOkH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$253c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$253c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _constants = require("./constants");
+var _s = $RefreshSig$();
+const useRestaurantMenu = (resID)=>{
+    _s();
+    const [resInfo, setResInfo] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        const data = await fetch((0, _constants.MENU_API_URL) + resID);
+        const json = await data.json();
+        setResInfo(json);
+    };
+    return resInfo;
+};
+_s(useRestaurantMenu, "nf5vhWK5g+GSXEJoc1vFGDyr7eI=");
+exports.default = useRestaurantMenu;
+
+  $parcel$ReactRefreshHelpers$253c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","./constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["3lsJq","1xC6H","bNKaB"], "bNKaB", "parcelRequire164e")
 
 //# sourceMappingURL=index.0641b553.js.map
