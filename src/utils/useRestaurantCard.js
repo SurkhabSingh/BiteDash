@@ -12,7 +12,7 @@ export const useRestaurantCard = () => {
     const data = await fetch(RES_URL);
     const json = await data.json();
     setListOfRestaurants(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
   };
 

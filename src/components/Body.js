@@ -1,6 +1,6 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withLabelCard } from "./RestaurantCard";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useRestaurantCard } from "../utils/useRestaurantCard";
 import { useOnline } from "../utils/useOnline";
 
@@ -9,21 +9,29 @@ const Body = () => {
   const [filteredList, setFilteredList] = useState([]);
   const listOfRestaurants = useRestaurantCard();
 
+  const HighlyAcclaimed = withLabelCard(RestaurantCard);
+
   const status = useOnline();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     setFilteredList(listOfRestaurants);
   }, [listOfRestaurants]);
+  console.log(filteredList);
 
   useEffect(() => {
-    if (searchText === "") {
-      setFilteredList(listOfRestaurants);
-    } else {
-      const filteredRes = listOfRestaurants.filter((res1) =>
-        res1.info.name.toLowerCase().includes(searchText.toLowerCase())
-      );
-      setFilteredList(filteredRes);
-    }
+    const timer = setTimeout(() => {
+      console.log("fetch call");
+      if (searchText === "") {
+        setFilteredList(listOfRestaurants);
+      } else {
+        const filteredRes = listOfRestaurants.filter((res1) =>
+          res1.info.name.toLowerCase().includes(searchText.toLowerCase())
+        );
+        setFilteredList(filteredRes);
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
   }, [searchText, listOfRestaurants]);
 
   const handleSearch = () => {
@@ -47,29 +55,45 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex">
+        <div className="m-4 p-4">
           <input
-            className="search-box"
+            className="border border-solid border-black"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button onClick={handleSearch}>Search</button>
+          <button
+            className="bg-green-100 m-4 py-2 px-4 rounded-lg"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
         </div>
-        <button className="filter-btn" onClick={handleFilter}>
-          Top Rated Restaurants
-        </button>
+        <div className="m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-2 bg-gray-100 rounded-lg"
+            onClick={handleFilter}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredList.map((restaurant) => (
           <Link
-            className="res-container"
+            className="flex flex-wrap"
             key={restaurant.info.id}
             to={`/restaurants/${restaurant.info.id}`}
           >
-            <RestaurantCard restaurant={restaurant} />
+            {restaurant.info.avgRating >= 4.5 ? (
+              <HighlyAcclaimed restaurant={restaurant} />
+            ) : (
+              <RestaurantCard restaurant={restaurant} />
+            )}
           </Link>
+          // <div onClick={() => navigate(`/restaurants/${restaurant.info.id}`)}>
+          // </div>
         ))}
       </div>
     </div>

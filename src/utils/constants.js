@@ -6,5 +6,10 @@ export const LOGO_URL =
 export const MENU_API_URL =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER&restaurantId=";
 
+// export const RES_URL =
+//   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
 export const RES_URL =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.63414314488243&lng=77.23420114719607&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+// https://www.swiggy.com/dapi/restaurants/list/update

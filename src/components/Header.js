@@ -8,23 +8,23 @@ const Header = () => {
   const status = useOnline();
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-pink-100 shadow-lg">
       <div className="logo-container">
-        <img className="logo " src={LOGO_URL} />
+        <img className="w-24" src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="flex items-center">
+        <ul className="flex p-4 ">
           <li>Status:{status ? "😂" : "😭"}</li>
-          <li>
+          <li className="px-3">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link to="/">Cart</Link>
           </li>
           <button
