@@ -1,13 +1,16 @@
 import RestaurantCard, { withLabelCard } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useRestaurantCard } from "../utils/useRestaurantCard";
 import { useOnline } from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredList, setFilteredList] = useState([]);
   const listOfRestaurants = useRestaurantCard();
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   const HighlyAcclaimed = withLabelCard(RestaurantCard);
 
@@ -77,6 +80,14 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div className="m-4 p-4 flex px-4 py-2 items-center">
+          <input
+            className="border border-solid border-black"
+            type="text"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
       <div className="flex flex-wrap">

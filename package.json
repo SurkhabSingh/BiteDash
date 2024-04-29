@@ -1,7 +1,7 @@
 {
-  "name": "namaste-react",
+  "name": "bitedash",
   "version": "1.0.0",
-  "description": "learning npm",
+  "description": "food app",
   "main": "app.js",
   "scripts": {
     "start": "parcel index.html",
@@ -19,14 +19,22 @@
   },
   "homepage": "https://github.com/SurkhabSingh/namaste-react#readme",
   "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@testing-library/react": "^15.0.5",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
     "parcel": "^2.11.0",
     "postcss": "^8.4.38",
     "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
     "tailwindcss": "^3.4.3"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.1",
     "react-router-dom": "^6.22.3"
   }
 }
