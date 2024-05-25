@@ -1,19 +1,28 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
-  // console.log(items);
-
   const dispatch = useDispatch();
+  const cartItems = useSelector((store) => store.cart.items);
+
   const handleAddItem = (item) => {
-    dispatch(addItem(item));
+    const itemExists = cartItems.some(
+      (existingItem) => existingItem.card.info.id === item.card.info.id
+    );
+
+    if (!itemExists) {
+      dispatch(addItem(item));
+    } else {
+      console.log("Item already in cart:", item.card.info);
+    }
   };
 
   return (
     <div>
       {items.map((item) => (
         <div
+          data-testid="foodItems"
           key={item.card.info.id}
           className="m-2 p-2 border-gray-200 border-b-2 text-left  flex justify-between"
         >

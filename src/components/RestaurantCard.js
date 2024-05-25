@@ -5,8 +5,12 @@ import { CDN_URL } from "../utils/constants";
 // };
 
 const RestaurantCard = ({ restaurant }) => {
+  // console.log(restaurant);
   return (
-    <div className="m-4 p-4 w-[250px] rounded-lg hover:bg-gray-200 bg-gray-100">
+    <div
+      data-testid="resCard"
+      className="m-4 p-4 w-[250px] h-[480px] rounded-lg hover:bg-gray-200 bg-gray-100"
+    >
       <img
         className="rounded-lg w-[220px] h-[200px] "
         alt="res-img"
@@ -15,6 +19,7 @@ const RestaurantCard = ({ restaurant }) => {
       <h3 className="font-bold text-lg py-2">{restaurant.info.name}</h3>
       <h4>{restaurant.info.cuisines.join(", ")}</h4>
       <h4>{restaurant.info.avgRating} star</h4>
+      <h4>{restaurant.info.costForTwo} </h4>
       <h4>DeliveryTime: {restaurant.info.sla.deliveryTime} minutes</h4>
     </div>
   );

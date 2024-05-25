@@ -20,11 +20,9 @@ const Body = () => {
   useEffect(() => {
     setFilteredList(listOfRestaurants);
   }, [listOfRestaurants]);
-  console.log(filteredList);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log("fetch call");
       if (searchText === "") {
         setFilteredList(listOfRestaurants);
       } else {
@@ -49,7 +47,9 @@ const Body = () => {
   };
 
   const handleFilter = () => {
-    const filteredList1 = filteredList.filter((res) => res.info.avgRating > 4);
+    const filteredList1 = filteredList.filter(
+      (res) => res.info.avgRating >= 4.5
+    );
     setFilteredList(filteredList1);
   };
   if (status === false) {
@@ -63,6 +63,7 @@ const Body = () => {
           <input
             className="border border-solid border-black"
             type="text"
+            data-testid="searchInput"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />

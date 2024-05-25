@@ -12,7 +12,7 @@ const Header = () => {
   const { loggedInUser } = useContext(UserContext);
 
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg">
@@ -34,13 +34,15 @@ const Header = () => {
           <li className="px-3 font-extrabold ">
             <Link to="/cart">Cart - {cartItems.length}</Link>
           </li>
-          <li className="px-3">{loggedInUser}</li>
           <button
             className="login-btn"
             onClick={() => {
               login === "Login" ? setLogin("Logout") : setLogin("Login");
             }}
-          ></button>
+          >
+            {login}
+          </button>
+          <li className="px-3">{loggedInUser}</li>
         </ul>
       </div>
     </div>
